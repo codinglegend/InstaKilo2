@@ -25,6 +25,7 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -51,6 +52,8 @@
     [self.objects addObject:randomName8];
     [self.objects addObject:image9];
     [self.objects addObject:image10];
+
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     
     [self.collectionView reloadData];
 }
@@ -67,6 +70,7 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    
     ImageCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:@"imageIdentifier" forIndexPath:indexPath];
     
     cell.imageLabel.image =[self.objects[indexPath.row] image];
@@ -81,6 +85,7 @@
         
         DetailImageCellViewController *detailViewController = [segue destinationViewController];
         detailViewController.image = myImage;
+        
         
     }
     
